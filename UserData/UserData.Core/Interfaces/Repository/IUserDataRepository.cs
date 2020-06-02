@@ -7,9 +7,9 @@ namespace UserData.Core.Interfaces.Repository
 {
     public interface IUserDataRepository
     {
-        Task<User> Get(int id);
-        Task Add(User user);
-        Task Modify(User user);
-        Task Delete(User user);
+        Task<User> GetAsync(int id);
+        Task AddAsync(User user);
+        Task ModifyAsync(User user);
+        Task DeleteAsync(User user);
     }
 }
