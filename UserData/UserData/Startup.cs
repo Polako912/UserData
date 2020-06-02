@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using UserData.Extensions;
 
 namespace UserData
 {
@@ -25,6 +26,11 @@ namespace UserData
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services
+                .AddConfigs(Configuration)
+                .AddContext("UserData")
+                .AddRepository();
+            
             services.AddControllers();
         }
 
