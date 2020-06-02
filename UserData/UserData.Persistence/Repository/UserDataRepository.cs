@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using UserData.Core.Commands;
 using UserData.Core.Interfaces.Repository;
 using UserData.Core.Models;
 using UserData.Persistence.Context;
@@ -21,9 +22,18 @@ namespace UserData.Persistence.Repository
             return await _context.UsersData.FirstOrDefaultAsync(user => user.UserId == id);
         }
 
-        public async Task AddAsync(User user)
+        public async Task AddAsync(UserCommand user)
         {
-            await _context.UsersData.AddAsync(user);
+            var userValid = new User
+            {
+                Age = user.Age,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Street = user.Street,
+                StreetNumber = user.StreetNumber
+            };
+
+            await _context.UsersData.AddAsync(userValid);
             await _context.SaveChangesAsync();
         }
 

@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using UserData.Core.Commands;
 using UserData.Core.Interfaces.Services;
 using UserData.Core.Models;
 
@@ -26,7 +27,7 @@ namespace UserData.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] User user)
+        public async Task<IActionResult> Add([FromBody] UserCommand user)
         {
             if (!ModelState.IsValid) return BadRequest();
 

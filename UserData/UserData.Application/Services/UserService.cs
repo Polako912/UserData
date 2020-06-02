@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using UserData.Core.Commands;
 using UserData.Core.Interfaces.Repository;
 using UserData.Core.Interfaces.Services;
 using UserData.Core.Models;
@@ -19,7 +20,7 @@ namespace UserData.Application.Services
             return _userDataRepository.GetAsync(id);
         }
 
-        public async Task AddAsync(User user)
+        public async Task AddAsync(UserCommand user)
         {
             await _userDataRepository.AddAsync(user);
         }
