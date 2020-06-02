@@ -26,6 +26,18 @@ namespace UserData
                 .AddContext("UserData")
                 .AddRepository()
                 .AddServices()
+                .AddCors(options =>
+                {
+                    options.AddPolicy("AllowAll",
+                        builder =>
+                        {
+                            builder
+                                .AllowAnyOrigin()
+                                .AllowAnyMethod()
+                                .AllowAnyHeader();
+                            // .AllowCredentials(); //TODO: turn on when add auth!
+                        });
+                })
                 .AddSwaggerGen(c =>
                 {
                     c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
@@ -52,6 +64,7 @@ namespace UserData
                 .UseHttpsRedirection()
                 .UseRouting()
                 .UseAuthorization()
+                .UseCors("AllowAll")
                 .UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
