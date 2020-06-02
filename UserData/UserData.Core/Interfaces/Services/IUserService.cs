@@ -4,9 +4,9 @@ using System.Text;
 using System.Threading.Tasks;
 using UserData.Core.Models;
 
-namespace UserData.Core.Interfaces.Repository
+namespace UserData.Core.Interfaces.Services
 {
-    public interface IUserDataRepository
+    public interface IUserService
     {
         Task<User> GetAsync(int id);
         Task AddAsync(User user);

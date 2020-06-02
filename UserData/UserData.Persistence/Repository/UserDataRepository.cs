@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using UserData.Core.Interfaces.Repository;
+using UserData.Core.Models;
 using UserData.Persistence.Context;
 
 namespace UserData.Persistence.Repository

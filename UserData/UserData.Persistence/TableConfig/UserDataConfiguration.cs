@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using UserData.Core.Models;
 
 namespace UserData.Persistence.TableConfig
 {

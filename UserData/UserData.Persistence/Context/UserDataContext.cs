@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using UserData.Core.Models;
 using UserData.Persistence.Extension;
 using UserData.Persistence.Settings;
 using UserData.Persistence.TableConfig;
