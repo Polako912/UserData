@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using UserData.Persistence.Extension;
 using UserData.Persistence.Settings;
+using UserData.Persistence.TableConfig;
 
 namespace UserData.Persistence.Context
 {
@@ -22,7 +23,9 @@ namespace UserData.Persistence.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Seed(_config);
+            modelBuilder
+                .ApplyConfiguration(new UserDataConfiguration())
+                .Seed(_config);
         }
     }
 }
