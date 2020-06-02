@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using UserData.Core.Interfaces.Repository;
 using UserData.Core.Interfaces.Services;
 using UserData.Core.Models;
@@ -22,19 +19,19 @@ namespace UserData.Application.Services
             return _userDataRepository.GetAsync(id);
         }
 
-        public Task AddAsync(User user)
+        public async Task AddAsync(User user)
         {
-            return _userDataRepository.AddAsync(user);
+            await _userDataRepository.AddAsync(user);
         }
 
-        public Task ModifyAsync(User user)
+        public async Task ModifyAsync(User user)
         {
-            return _userDataRepository.ModifyAsync(user);
+            await _userDataRepository.ModifyAsync(user);
         }
 
-        public Task DeleteAsync(User user)
+        public async Task DeleteAsync(User user)
         {
-            return _userDataRepository.DeleteAsync(user);
+            await _userDataRepository.DeleteAsync(user);
         }
     }
 }

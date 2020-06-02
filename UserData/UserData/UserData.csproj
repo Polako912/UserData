@@ -6,9 +6,11 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\UserData.Application\UserData.Application.csproj" />
       <ProjectReference Include="..\UserData.Core\UserData.Core.csproj" />
       <ProjectReference Include="..\UserData.Persistence\UserData.Persistence.csproj" />
     </ItemGroup>

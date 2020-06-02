@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using UserData.Core.Interfaces.Repository;
 using UserData.Core.Interfaces.Services;
 using UserData.Core.Models;
 
@@ -41,7 +36,7 @@ namespace UserData.Controllers
         }
 
         [HttpDelete]
-        public async  Task<IActionResult> Delete([FromBody] User user)
+        public async Task<IActionResult> Delete([FromBody] User user)
         {
             if (!ModelState.IsValid) return BadRequest();
 

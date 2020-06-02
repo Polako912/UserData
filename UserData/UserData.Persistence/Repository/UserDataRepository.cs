@@ -15,39 +15,33 @@ namespace UserData.Persistence.Repository
         {
             _context = context;
         }
-        
+
         public async Task<User> GetAsync(int id)
         {
-            return await _context.Users.FirstOrDefaultAsync(user => user.UserId == id);
+            return await _context.UsersData.FirstOrDefaultAsync(user => user.UserId == id);
         }
 
         public async Task AddAsync(User user)
         {
-            await _context.Users.AddAsync(user);
+            await _context.UsersData.AddAsync(user);
             await _context.SaveChangesAsync();
         }
 
         public async Task ModifyAsync(User user)
         {
-            var ctxUser = await _context.Users.FirstOrDefaultAsync(thisUser => thisUser.UserId == user.UserId);
-            if (ctxUser is null)
-            {
-                throw new ArgumentException($"Is exist {user.UserId}.");
-            }
+            var ctxUser = await _context.UsersData.FirstOrDefaultAsync(thisUser => thisUser.UserId == user.UserId);
+            if (ctxUser is null) throw new ArgumentException($"Is exist {user.UserId}.");
 
-            _context.Users.Update(ctxUser);
+            _context.UsersData.Update(ctxUser);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(User user)
         {
-            var ctxUser = await _context.Users.FirstOrDefaultAsync(thisUser => thisUser.UserId == user.UserId);
-            if (ctxUser is null)
-            {
-                throw new ArgumentException($"Not exist {user.UserId}.");
-            }
+            var ctxUser = await _context.UsersData.FirstOrDefaultAsync(thisUser => thisUser.UserId == user.UserId);
+            if (ctxUser is null) throw new ArgumentException($"Not exist {user.UserId}.");
 
-            _context.Users.Remove(ctxUser);
+            _context.UsersData.Remove(ctxUser);
             await _context.SaveChangesAsync();
         }
     }
