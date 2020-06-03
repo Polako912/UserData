@@ -61,7 +61,7 @@ namespace UserData
 
             app
                 .UseMigrationUserData()
-                .UseHttpsRedirection()
+                //.UseHttpsRedirection()
                 .UseRouting()
                 .UseAuthorization()
                 .UseCors("AllowAll")
