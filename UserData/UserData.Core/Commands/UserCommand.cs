@@ -4,17 +4,20 @@ namespace UserData.Core.Commands
 {
     public class UserCommand
     {
-        [Required]
+        [Required] public string EmailAddress { get; set; }
+
+        [Required] public string Username { get; set; }
+
         public string FirstName { get; set; }
-        [Required]
+
         public string LastName { get; set; }
-        [Required]
+
         public int Age { get; set; }
-        [Required]
+
         public string Street { get; set; }
-        [Required]
+
         public int StreetNumber { get; set; }
-        [Required]
+
         public string TelephoneNumber{ get; set; }
     }
 }
