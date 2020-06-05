@@ -31,7 +31,9 @@ namespace UserData.Persistence.Repository
                 LastName = user.LastName,
                 Street = user.Street,
                 StreetNumber = user.StreetNumber,
-                TelephoneNumber = user.TelephoneNumber
+                TelephoneNumber = user.TelephoneNumber,
+                Username = user.Username,
+                EmailAddress = user.EmailAddress
             };
 
             await _context.UsersData.AddAsync(userValid);
@@ -42,6 +44,15 @@ namespace UserData.Persistence.Repository
         {
             var ctxUser = await _context.UsersData.FirstOrDefaultAsync(thisUser => thisUser.UserId == user.UserId);
             if (ctxUser is null) throw new ArgumentException($"Is exist {user.UserId}.");
+
+            ctxUser.Age = user.Age;
+            ctxUser.Street = user.Street;
+            ctxUser.Username = user.Username;
+            ctxUser.EmailAddress = user.Username;
+            ctxUser.FirstName = user.FirstName;
+            ctxUser.LastName = user.LastName;
+            ctxUser.StreetNumber = user.StreetNumber;
+            ctxUser.TelephoneNumber = ctxUser.TelephoneNumber;
 
             _context.UsersData.Update(ctxUser);
             await _context.SaveChangesAsync();
