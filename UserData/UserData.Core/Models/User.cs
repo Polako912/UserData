@@ -19,7 +19,7 @@ namespace UserData.Core.Models
 
         public string Street { get; set; }
 
-        public int StreetNumber { get; set; }
+        public string StreetNumber { get; set; }
 
         public string TelephoneNumber{ get; set; }
     }

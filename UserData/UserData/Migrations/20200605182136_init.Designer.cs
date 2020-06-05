@@ -9,7 +9,7 @@ using UserData.Persistence.Context;
 namespace UserData.Migrations
 {
     [DbContext(typeof(UserDataContext))]
-    [Migration("20200605165112_init")]
+    [Migration("20200605182136_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,8 +43,8 @@ namespace UserData.Migrations
                     b.Property<string>("Street")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("StreetNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("StreetNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TelephoneNumber")
                         .HasColumnType("nvarchar(max)");

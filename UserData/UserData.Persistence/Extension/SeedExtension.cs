@@ -33,7 +33,7 @@ namespace UserData.Persistence.Extension
                     Street = RandomString(_random.Next(8,32)),
                     FirstName = RandomString(_random.Next(8,32)),
                     LastName = RandomString(_random.Next(8,32)),
-                    StreetNumber = _random.Next(8,32),
+                    StreetNumber = RandomString(2),
                     TelephoneNumber = RandomNumber(9),
                     Username = RandomString(9),
                     EmailAddress = RandomString(9)
