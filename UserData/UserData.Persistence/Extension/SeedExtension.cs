@@ -34,6 +34,7 @@ namespace UserData.Persistence.Extension
                     FirstName = RandomString(_random.Next(8,32)),
                     LastName = RandomString(_random.Next(8,32)),
                     StreetNumber = _random.Next(8,32),
+                    TelephoneNumber = RandomNumber(9),
                 });
             }
 
@@ -43,6 +44,13 @@ namespace UserData.Persistence.Extension
         private static string RandomString(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[_random.Next(s.Length)]).ToArray());
+        }
+
+        private static string RandomNumber(int length)
+        {
+            const string chars = "0123456789";
             return new string(Enumerable.Repeat(chars, length)
                 .Select(s => s[_random.Next(s.Length)]).ToArray());
         }

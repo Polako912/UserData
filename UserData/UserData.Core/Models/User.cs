@@ -16,5 +16,7 @@ namespace UserData.Core.Models
         [Required] public string Street { get; set; }
 
         [Required] public int StreetNumber { get; set; }
+
+        [Required] public string TelephoneNumber{ get; set; }
     }
 }

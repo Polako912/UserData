@@ -30,7 +30,8 @@ namespace UserData.Persistence.Repository
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Street = user.Street,
-                StreetNumber = user.StreetNumber
+                StreetNumber = user.StreetNumber,
+                TelephoneNumber = user.TelephoneNumber
             };
 
             await _context.UsersData.AddAsync(userValid);
