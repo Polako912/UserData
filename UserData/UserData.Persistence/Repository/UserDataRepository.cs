@@ -48,7 +48,7 @@ namespace UserData.Persistence.Repository
             ctxUser.Age = user.Age;
             ctxUser.Street = user.Street;
             ctxUser.Username = user.Username;
-            ctxUser.EmailAddress = user.Username;
+            ctxUser.EmailAddress = user.EmailAddress;
             ctxUser.FirstName = user.FirstName;
             ctxUser.LastName = user.LastName;
             ctxUser.StreetNumber = user.StreetNumber;
