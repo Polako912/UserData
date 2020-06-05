@@ -25,8 +25,8 @@ namespace UserData.Persistence.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .ApplyConfiguration(new UserDataConfiguration())
-                .Seed(_config);
+                .ApplyConfiguration(new UserDataConfiguration());
+            // .Seed(_config);
         }
     }
 }

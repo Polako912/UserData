@@ -35,6 +35,8 @@ namespace UserData.Persistence.Extension
                     LastName = RandomString(_random.Next(8,32)),
                     StreetNumber = _random.Next(8,32),
                     TelephoneNumber = RandomNumber(9),
+                    Username = RandomString(9),
+                    EmailAddress = RandomString(9)
                 });
             }
 
