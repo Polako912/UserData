@@ -18,7 +18,7 @@ namespace UserData.Migrations
                     LastName = table.Column<string>(nullable: true),
                     Age = table.Column<int>(nullable: false),
                     Street = table.Column<string>(nullable: true),
-                    StreetNumber = table.Column<int>(nullable: false),
+                    StreetNumber = table.Column<string>(nullable: true),
                     TelephoneNumber = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
