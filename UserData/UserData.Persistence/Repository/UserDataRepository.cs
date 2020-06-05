@@ -52,7 +52,7 @@ namespace UserData.Persistence.Repository
             ctxUser.FirstName = user.FirstName;
             ctxUser.LastName = user.LastName;
             ctxUser.StreetNumber = user.StreetNumber;
-            ctxUser.TelephoneNumber = ctxUser.TelephoneNumber;
+            ctxUser.TelephoneNumber = user.TelephoneNumber;
 
             _context.UsersData.Update(ctxUser);
             await _context.SaveChangesAsync();
