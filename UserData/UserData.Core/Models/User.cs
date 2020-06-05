@@ -7,16 +7,20 @@ namespace UserData.Core.Models
     {
         public int UserId { get; set; }
 
-        [Required] public string FirstName { get; set; }
+        [Required] public string EmailAddress { get; set; }
 
-        [Required] public string LastName { get; set; }
+        [Required] public string Username { get; set; }
 
-        [Required] public int Age { get; set; }
+        public string FirstName { get; set; }
 
-        [Required] public string Street { get; set; }
+        public string LastName { get; set; }
 
-        [Required] public int StreetNumber { get; set; }
+        public int Age { get; set; }
 
-        [Required] public string TelephoneNumber{ get; set; }
+        public string Street { get; set; }
+
+        public int StreetNumber { get; set; }
+
+        public string TelephoneNumber{ get; set; }
     }
 }
